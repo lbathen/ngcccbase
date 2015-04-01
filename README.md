@@ -133,6 +133,39 @@ using this command if you already have money in your testnet wallet.
 
  Should return a large hash.
 
+I. Example With Faucet
+-------------------
+
+First we nee to start the testnet, configured as testnet=3
+
+a) Testnet
+
+testnet=3
+testnet_config=1
+dnsseed=0
+upnp=0
+
+b) Proxy
+
+proxy=10.1.192.48:1080
+
+c) Run commands:
+
+python ngccc.py setval testnet true
+python ngccc.py newaddr bitcoin
+python ngccc.py alladdresses bitcoin
+
+c) Wait for confirmations
+
+python ngccc.py scan
+python ngccc.py balance --unconfirmed bitcoin
+python ngccc.py balance --available bitcoin
+
+d) Issue asset:
+
+python ngccc.py issue 'Test Asset for 0.1 BTC' obc 10000 1
+
+
 Contributors
 ------------
 
